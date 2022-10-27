@@ -7,11 +7,19 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Covid19Item',
-  props: ['store', 'index'],
-};
+<script setup lang="ts">
+import { reactive } from "vue";
+const props = defineProps({
+  store: {
+    type: Object,
+    default: () => {}
+  },
+  index: {
+    type: Number,
+    default: () => null
+  },
+})
+const { store, index } = reactive(props)
 </script>
 
 <style lang="scss" scoped>
