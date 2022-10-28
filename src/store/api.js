@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // https://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D03001-001&l=https://data.nhi.gov.tw/resource/Nhi_Fst/Fstdata.csv
 const instance = axios.create({
-  baseURL: 'https://data.nhi.gov.tw',
+  baseURL: '/api',
   responseType: 'blob',
   timeout: 20000,
 });
