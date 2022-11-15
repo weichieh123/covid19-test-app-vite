@@ -63,9 +63,9 @@ import { reactive, ref, watch, onMounted, getCurrentInstance  } from "vue";
 const { proxy } : any = getCurrentInstance()
 
 let openStreetMap = {};
-const timeStamp = ref("");
-const resFile = ref("");
-const storeList = ref("");
+const timeStamp = ref<string>("");
+const resFile = ref<any[]>([]);
+const storeList = ref<any[]>([]);
 const options = reactive({
   city: cityDistOptions, //城市選項資料
   dist: "", //區域選項資料
@@ -97,7 +97,7 @@ function test() {
 function getNowTime() {
   const today = new Date();
   const date =
-    today.getFullYear() + "/" + today.getMonth() + 1 + "/" + today.getDate();
+    today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate();
   const time =
     today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   timeStamp.value = date + " " + time;
